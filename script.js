@@ -29,7 +29,7 @@ function createAnchorWithText(txt) {
 function createVol(vol, max) {
 	const volEl = document.createElement("div");
    console.log(vol,max)
-	volEl.style.width = vol ? `calc(${ (vol * 100)/max }vw - 22px)` : "10px";
+	volEl.style.width = vol ? `calc(${ (vol * 100)/max }vw - 42px)` : "10px";
 	volEl.style.background = "cornflowerblue";
 	volEl.style.height = "30px";
 	volEl.style.padding = "5px";
