@@ -1,3 +1,4 @@
+const wordsEl = document.querySelector("#words");
 const resultEl = document.querySelector("#result");
 
 function renderResult(data) {
@@ -5,6 +6,7 @@ function renderResult(data) {
 
    const maxTweets = sortedTrends[0].tweet_volume;
 	const cards = sortedTrends.map((trend) => {
+      appendWord(trend.name);
 		const card = createCard();
 		const nameEl = createH3(trend.name);
 		const volumeEl = createVol(trend.tweet_volume, maxTweets);
@@ -45,6 +47,17 @@ function createCard() {
 	const card = document.createElement("div");
 	card.classList.add('card')
 	return card;
+}
+
+function createWord (txt) {
+   const wordEl = document.createElement("div");
+   wordEl.classList.add("word");
+   wordEl.textContent = txt;
+   return wordEl
+}
+
+function appendWord(txt) {
+   wordsEl.append(createWord(txt));
 }
 fetch("https://corsifying.herokuapp.com/request?url=https://api.twitter.com/1.1/trends/place.json?id=2459115", {
 	headers: {
