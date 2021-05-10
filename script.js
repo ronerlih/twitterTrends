@@ -7,10 +7,10 @@ function renderResult(data) {
 
    const maxTweets = sortedTrends[0].tweet_volume;
 	const cards = sortedTrends.map((trend) => {
-      appendWord(trend.name, trend.tweet_volume*100/maxTweets);
+      appendWord(trend.name, trend.tweet_volume*100/maxTweets, trend.url);
 		const card = createCard();
 		const nameEl = createH3(trend.name);
-		const volumeEl = createVol(trend.tweet_volume, maxTweets);
+		const volumeEl = createVol(trend.tweet_volume, maxTweets, trend.url);
 		const linkEl = createAnchorWithText(trend.url);
 		card.append(nameEl, linkEl, volumeEl);
 
@@ -26,15 +26,14 @@ function createAnchorWithText(txt) {
 	a.textContent = "🌎 " + txt;
 	return a;
 }
-function createVol(vol, max) {
-	const volEl = document.createElement("div");
+function createVol(vol, max, url) {
+	const volEl = document.createElement("a");
+   volEl.href = url;
+   volEl.target = "_black";
    console.log(vol,max)
-	volEl.style.width = vol ? `calc(${ (vol * 100)/max }vw - 42px)` : "10px";
-	volEl.style.background = "cornflowerblue";
-	volEl.style.height = "30px";
-	volEl.style.padding = "5px";
-	volEl.style.margin = "5px 0px";
-	volEl.style.borderRadius = "10px";
+	volEl.style.width = vol ? `calc(${ (vol * 100)/max }vw - 52px)` : "10px";
+   volEl.classList.add("card-volume")
+   
 	volEl.innerHTML = vol ? vol + "&nbsp;tweets" : "no data";
 	return volEl;
 }
@@ -50,16 +49,18 @@ function createCard() {
 	return card;
 }
 
-function createWord (txt, height) {
-   const wordEl = document.createElement("div");
+function createWord (txt, height, url) {
+   const wordEl = document.createElement("a");
+   wordEl.href = url;
+   wordEl.target = "_black";
    wordEl.classList.add("word");
    wordEl.textContent = txt;
    wordEl.style.height = height + "px";
    return wordEl
 }
 
-function appendWord(txt, height) {
-   wordsEl.append(createWord(txt, height));
+function appendWord(txt, height, url) {
+   wordsEl.append(createWord(txt, height,url));
 }
 
 fetch("https://corsifying.herokuapp.com/request?url=https://api.twitter.com/1.1/trends/place.json?id=2459115", {
