@@ -6,116 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 
-		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-
-			:root {
-				font-family: "Roboto", sans-serif;
-				--color: #1da1f2;
-			}
-			* {
-				/* box-sizing: border-box; */
-			}
-			body {
-				margin: 15px 0px 0px;
-			}
-			.card {
-				border: 2px solid var(--color);
-				padding: 5px;
-				margin: 20px 5px;
-			}
-			.twitter-svg {
-				fill: var(--color);
-				height: 2rem;
-			}
-			#title span {
-				font-size: 2rem;
-				/* white-space:pre; */
-				border-radius: 4px;
-			}
-			#title {
-				font-size: 2rem;
-				display: inline-block;
-				margin: 0px 20px 15px;
-				line-height: 4rem;
-				vertical-align: bottom;
-			}
-			.word {
-				padding: 3px;
-				display: inline-block;
-				/* border: 1px solid var(--color); */
-				margin: 2px 5px;
-				border-radius: 3px;
-				background-color: var(--color);
-				color: white;
-				min-height: 20px;
-				vertical-align: bottom;
-				cursor: pointer;
-				border: 1px solid white;
-				padding: 6px;
-			}
-
-			.card-volume:hover,
-			.word:hover {
-				color: var(--color);
-				background-color: white;
-				border: 1px solid;
-			}
-			.card-volume {
-				border: 1px solid white;
-				display: block;
-				background: #1da1f2;
-				color: white;
-				height: 20px;
-				padding: 5px;
-				margin: 5px 0px;
-				cursor: pointer;
-				border-radius: 3px;
-			}
-			.card-volume,
-			.word {
-				text-decoration: none;
-			}
-			.gradient {
-				fill: url("#gradient-layer");
-				pointer-events: all;
-			}
-
-			.gradient ~ defs stop {
-				transition: 0.3s;
-			}
-
-			.gradient.hover ~ defs stop:first-child {
-				stop-color: #8940de;
-			}
-
-			.gradient.hover ~ defs stop:nth-child(2) {
-				stop-color: #e1a728;
-			}
-
-			.gradient.hover ~ defs stop:last-child {
-				stop-color: #24bed2;
-			}
-
-			#github-link {
-				position: absolute;
-				right: 20px;
-				top: 0px;
-				color: #007bff;
-				text-decoration: none;
-				background-color: transparent;
-				font-family: "Roboto", sans-serif;
-				vertical-align: middle;
-				line-height: 60px;
-				font-weight: 400;
-				font-size: 1rem;
-			}
-			.github-svg {
-				overflow: hidden;
-				vertical-align: middle;
-				line-height: 60px;
-			}
-		</style>
+      <link rel="stylesheet" href="assets/style.css">
 	</head>
 	<body>
 		<!-- github link -->
@@ -160,7 +51,7 @@
 		<div id="words"></div>
 		<div id="result"></div>
 
-		<script src="./crypto.js"></script>
-		<script src="./script.js"></script>
+		<script src="assets//crypto.js"></script>
+		<script src="assets/script.js"></script>
 	</body>
 </html>
