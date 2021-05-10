@@ -30,10 +30,8 @@ function createVol(vol, max, url) {
 	const volEl = document.createElement("a");
    volEl.href = url;
    volEl.target = "_black";
-   console.log(vol,max)
 	volEl.style.width = vol ? `calc(${ (vol * 100)/max }vw - 52px)` : "10px";
    volEl.classList.add("card-volume")
-   
 	volEl.innerHTML = vol ? vol + "&nbsp;tweets" : "no data";
 	return volEl;
 }
