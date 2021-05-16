@@ -2,6 +2,8 @@
 
 # twitterTrends
 
+![screenshot](assets/screenshot.png)
+
 **Twitter API authentication demo**
 > 🌻 And also a nice morning catch up (when that's your thing).
 
